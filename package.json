@@ -1,0 +1,20 @@
+{
+  "name": "todos-mern-app",
+  "version": "1.0.0",
+  "description": "Todos app created using the MERN Stack",
+  "main": "index.js",
+  "repository": "https://github.com/estebanborai/todos-mern-app.git",
+  "author": "Esteban Borai <estebanborai@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon ./server"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.17"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
