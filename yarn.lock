@@ -208,6 +208,15 @@
     "@babel/helper-remap-async-to-generator" "^7.1.0"
     "@babel/plugin-syntax-async-generators" "^7.0.0"
 
+"@babel/plugin-proposal-decorators@^7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.1.0.tgz#bb39ae934318e4560db2d724b0fca8da0299b120"
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/helper-replace-supers" "^7.1.0"
+    "@babel/helper-split-export-declaration" "^7.0.0"
+    "@babel/plugin-syntax-decorators" "^7.1.0"
+
 "@babel/plugin-proposal-json-strings@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-json-strings/-/plugin-proposal-json-strings-7.0.0.tgz#3b4d7b5cf51e1f2e70f52351d28d44fc2970d01e"
@@ -240,6 +249,12 @@
 "@babel/plugin-syntax-async-generators@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-async-generators/-/plugin-syntax-async-generators-7.0.0.tgz#bf0891dcdbf59558359d0c626fdc9490e20bc13c"
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-syntax-decorators@^7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-decorators/-/plugin-syntax-decorators-7.1.0.tgz#2fa7c1a7905a299c9853ebcef340306675f9cbdc"
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
@@ -1437,6 +1452,13 @@ copy-descriptor@^0.1.0:
 core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
+
+cors@^2.8.4:
+  version "2.8.4"
+  resolved "https://registry.yarnpkg.com/cors/-/cors-2.8.4.tgz#2bd381f2eb201020105cd50ea59da63090694686"
+  dependencies:
+    object-assign "^4"
+    vary "^1"
 
 create-ecdh@^4.0.0:
   version "4.0.3"
@@ -3527,7 +3549,7 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
+object-assign@^4, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
@@ -4042,6 +4064,10 @@ react-dom@^16.5.2:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     schedule "^0.5.0"
+
+react-modable@^1.0.0-4.1:
+  version "1.0.0-4.1"
+  resolved "https://registry.yarnpkg.com/react-modable/-/react-modable-1.0.0-4.1.tgz#f13c4a1bda9659824f86323b76a971cc70bde2d3"
 
 react@^16.5.2:
   version "16.5.2"
@@ -5032,7 +5058,7 @@ v8-compile-cache@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.0.2.tgz#a428b28bb26790734c4fc8bc9fa106fccebf6a6c"
 
-vary@~1.1.2:
+vary@^1, vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
 

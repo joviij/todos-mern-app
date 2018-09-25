@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const mongoDB = 'mongodb://127.0.0.1:27017/TodosDB';
 const routes = require('./routes');
@@ -11,11 +12,12 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const app = express();
+app.use(cors());
 
 routes(app);
 
 module.exports = () => {
-  routes(app);
+	routes(app);
 
-  return app;
+	return app;
 };

@@ -1,0 +1,19 @@
+.todo {
+  padding: 0.5rem 0.3rem 0.5rem 0.5rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.todo:hover {
+  background: #eeeeee;
+  transition: 1s;
+}
+
+.label {
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  background: #6f6feb;
+  color: #ffffff;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}

@@ -1,11 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './todo.css';
+
+const TodoLabel = ({ label }) => (
+	label ? (
+		<span className="label">
+			{ label }
+		</span> ) : null
+);
+
+TodoLabel.propTypes = {
+	label: PropTypes.string
+};
 
 const Todo = ({ todo }) => (
-	<li>
+	<li className="todo">
 		{todo.todo}
 		<br />
-		{todo.label}
+		<TodoLabel label={todo.label} />
 	</li>
 );
 

@@ -1,8 +1,12 @@
 .todo-list {
+  background: #ffffff;
   margin: 0;
   padding: 0;
   list-style-type: none;
   grid-column: 2 / 2;
   grid-row: 2 / 2;
   height: 100%;
+  border-radius: 7px;
+  box-shadow: 0.5rem 0 1rem 0 #ededed;
+  overflow: hidden;
 }
