@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Modable from 'react-modable';
 import './todo-list.css';
-import Todo from '../Todo';
-import AddNew from '../lib/modals/AddNew';
+import Todo from '../../containers/Todo';
+import TodoModal from '../lib/modals/Todo';
 
 const modals = new Map([
-  ['add-new', AddNew]
+  ['todo', TodoModal]
 ]);
 
 @Modable(modals)
@@ -14,7 +14,11 @@ class TodoList extends React.Component {
 	get todos() {
 		const { todos } = this.props;
 		return todos ? todos.map(todo => (
-			<Todo key={todo._id} todo={todo} />
+      <Todo 
+        key={todo._id} 
+        todo={todo} 
+        onSelectTodo={this.props.onSelectTodo} 
+      />
 		)) : <p>Theres no todos!</p>;
 	}
   
@@ -31,7 +35,8 @@ class TodoList extends React.Component {
 }
 
 TodoList.propTypes = {
-	todos: PropTypes.array
+  todos: PropTypes.array,
+  onSelectTodo: PropTypes.func.isRequired
 };
 
 export default TodoList;

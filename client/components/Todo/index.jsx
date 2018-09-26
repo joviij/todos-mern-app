@@ -13,16 +13,21 @@ TodoLabel.propTypes = {
 	label: PropTypes.string
 };
 
-const Todo = ({ todo }) => (
-	<li className="todo">
-		{todo.todo}
+const onSelectTodo = props => {
+	props.onSelect(props.todo);
+};
+
+const Todo = props => (
+	<li className="todo" onClick={onSelectTodo.bind(null, props)}>
+		{props.todo.todo}
 		<br />
-		<TodoLabel label={todo.label} />
+		<TodoLabel label={props.todo.label} />
 	</li>
 );
 
 Todo.propTypes = {
-	todo: PropTypes.object.isRequired
+	todo: PropTypes.object.isRequired,
+	onSelect: PropTypes.func.isRequired
 };
 
 export default Todo;

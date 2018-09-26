@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './app.css';
 import TodoList from '../TodoList';
 import AddButton from '../AddButton';
@@ -11,7 +12,7 @@ class App extends React.Component {
 			todos: null,
 			error: null,
 			loading: false,
-			modal: 'add-new'
+			selected: null
 		};
     
 		this.config = {
@@ -19,7 +20,7 @@ class App extends React.Component {
 		};
     
 		this.getAllTodos = this.getAllTodos.bind(this);
-		this.closeModal = this.closeModal.bind(this);
+		this.selectTodo = this.selectTodo.bind(this);
 	}
 
 	getAllTodos() {
@@ -29,10 +30,9 @@ class App extends React.Component {
 			.catch(error => this.setState({ error }));
 	}
   
-	closeModal() {
-		console.log('Close Modal');
+	selectTodo(todo) {
 		this.setState({
-			modal: undefined
+			selected: todo
 		});
 	}
   
@@ -41,18 +41,25 @@ class App extends React.Component {
 	}
 
 	render() {
-		const { todos, modal } = this.state;
+		const { todos } = this.state;
+		const { modal } = this.props;
 		return (
 			<div className="app">
 				<TodoList 
 					todos={todos} 
 					modal={modal} 
-					onModalClose={this.closeModal} 
+					onModalClose={this.props.onCloseModal} 
+					onSelectTodo={this.selectTodo}
 				/>
 				<AddButton />
 			</div>
 		);
 	}
 }
+
+App.propTypes = {
+	modal: PropTypes.string,
+	onCloseModal: PropTypes.func
+};
 
 export default App;
