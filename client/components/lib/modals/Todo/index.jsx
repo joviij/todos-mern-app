@@ -4,7 +4,7 @@ import { Modal } from 'react-modable';
 import Preview from '../../../../containers/lib/modals/Todo/Preview';
 
 const Todo = ({ onHide }) => (
-	<Modal modalStyle={{ borderRadius: '4px' }}>
+	<Modal modalStyle={{ borderRadius: '4px', padding: '0', overflow: 'hidden' }}>
 		<Preview />
 		<button onClick={onHide}>Close</button>
 	</Modal>

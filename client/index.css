@@ -1,7 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
+:root {
+  --magenta: #E83690;
+  --violet: #5F5FDB;
+  --blue: #48A3FF;
+  --green: #32FF94;
+  --yellow: #FFF648;
+  --orange: #E88948;
+  --red: #FF3936;
+  --black: #111111;
+  --white: #ffffff;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans', sans-serif;
+  color: var(--black);
+}
+
+button {
+  padding: 0.5rem;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  margin: 0.5rem;
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--red);
+  transition: 1s;
 }
