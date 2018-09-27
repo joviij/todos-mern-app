@@ -1,0 +1,24 @@
+.todo-header {
+  padding: 0.5rem;
+  box-sizing: border-box;
+  background: var(--violet);
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.todo-header input[type="text"] {
+  background: transparent;
+  font-size: inherit;
+  border: none;
+  color: #ffffff;
+  box-sizing: border-box;
+  font-weight: 500;
+  outline: none;
+  border-bottom: 1px solid #ffffff;
+  width: 100%;
+  margin-right: 1rem;
+}

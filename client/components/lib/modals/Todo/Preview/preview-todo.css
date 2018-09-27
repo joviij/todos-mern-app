@@ -4,16 +4,6 @@
   list-style-type: none;
 }
 
-.todo-header {
-  padding: 0.5rem;
-  box-sizing: border-box;
-  background: var(--violet);
-  color: #ffffff;
-  margin: 0;
-  display: inline-block;
-  width: 100%;
-}
-
 .date-time {
   padding: 0.3rem;
   box-sizing: border-box;

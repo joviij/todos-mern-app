@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './preview-todo.css';
 import Label from '../../../../Todo/Label';
+import Header from '../../../../../containers/lib/modals/Todo/Header';
 
 const statuses = {
 	'1': 'To Do',
@@ -30,17 +31,19 @@ class Preview extends React.Component {
 		const { todo } = this.props;
 		return (
 			<React.Fragment>
-				<h3 className="todo-header">{todo.todo}</h3>
-				<ul className="preview-todo">
-					<li>
-						<Label label={todo.label} />
-					</li>
-					<li>{statuses[todo.status]}</li>
-					<li className="date-time">
-						{this.formatDate}
-						<span>{this.daysDifference}</span>
-					</li>
-				</ul>
+				<Header todo={todo} />
+				<div className="modal-body">
+					<ul className="preview-todo">
+						<li>
+							<Label label={todo.label} />
+						</li>
+						<li>{statuses[todo.status]}</li>
+						<li className="date-time">
+							{this.formatDate}
+							<span>{this.daysDifference}</span>
+						</li>
+					</ul>
+				</div>
 			</React.Fragment>
 		);
 	}

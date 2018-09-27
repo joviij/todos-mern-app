@@ -36,3 +36,8 @@ button:hover {
   background: var(--red);
   transition: 1s;
 }
+
+.modal-body {
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
