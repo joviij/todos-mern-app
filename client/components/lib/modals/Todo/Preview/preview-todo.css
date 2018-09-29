@@ -4,12 +4,12 @@
   list-style-type: none;
 }
 
-.date-time {
-  padding: 0.3rem;
+.preview-todo li {
+  padding: 0.5rem 0;
   box-sizing: border-box;
 }
 
-.date-time span {
+.date-time .days {
   color: #888888;
   font-weight: 300;
   padding-left: 1rem;

@@ -35,12 +35,14 @@ class Preview extends React.Component {
 				<div className="modal-body">
 					<ul className="preview-todo">
 						<li>
-							<Label label={todo.label} />
+							<span>Status:&nbsp;</span>{statuses[todo.status]}
 						</li>
-						<li>{statuses[todo.status]}</li>
 						<li className="date-time">
-							{this.formatDate}
-							<span>{this.daysDifference}</span>
+							<span>Created:&nbsp; {this.formatDate}</span>
+							<span className="days">{this.daysDifference}</span>
+						</li>
+						<li>
+							<Label label={todo.label} />
 						</li>
 					</ul>
 				</div>

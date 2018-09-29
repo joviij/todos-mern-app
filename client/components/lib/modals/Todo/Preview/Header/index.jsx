@@ -48,7 +48,11 @@ class Header extends React.Component {
 				}
 				{ 
 					this.state.showEdition || this.state.editing
-						? <FontAwesomeIcon icon={faPen} onClick={this.toggleInput} /> 
+						? <FontAwesomeIcon
+							icon={faPen} 
+							onClick={this.toggleInput} 
+							style={{ cursor: 'pointer' }} 
+						/> 
 						: null 
 				}
 			</h3>

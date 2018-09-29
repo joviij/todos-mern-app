@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './add-button.css';
 
-const AddButton = ({ onClick }) => (
-	<button className="add-button" onClick={onClick}>
+const AddButton = ({ onOpenModal }) => (
+	<button className="add-button" onClick={onOpenModal}>
     Add
 	</button>
 );
 
 AddButton.propTypes = {
-	onClick: PropTypes.func
+	onOpenModal: PropTypes.func
 };
 
 export default AddButton;

@@ -4,9 +4,11 @@ import Modable from 'react-modable';
 import './todo-list.css';
 import Todo from '../../containers/Todo';
 import TodoModal from '../lib/modals/Todo';
+import AddTodo from '../lib/modals/AddTodo';
 
 const modals = new Map([
-  ['todo', TodoModal]
+	['todo', TodoModal],
+	['add-todo', AddTodo]
 ]);
 
 @Modable(modals)

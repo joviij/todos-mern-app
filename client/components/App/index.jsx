@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './app.css';
 import TodoList from '../TodoList';
-import AddButton from '../AddButton';
+import AddButton from '../../containers/AddButton';
 
 class App extends React.Component {
 	constructor(props) {

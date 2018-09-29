@@ -1,0 +1,33 @@
+.add-todo-form {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem 0;
+	box-sizing: border-box;
+}
+
+.add-todo-form button {
+	width: 50%;
+	margin: 1rem auto;
+}
+
+.add-todo-form button:hover,
+.add-todo-form button:active {
+	background: var(--green);
+}
+
+.add-todo-form input[type="text"] {
+  background: transparent;
+	font-size: inherit;
+	padding: 0.2rem;
+	box-sizing: border-box;
+  border: none;
+  color: var(--black);
+  box-sizing: border-box;
+  font-weight: 500;
+  outline: none;
+  border-bottom: 1px solid var(--black);
+	width: auto;
+	margin: 0.5rem 0;
+}
