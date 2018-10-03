@@ -1,4 +1,4 @@
-import { openModal, closeModal } from 'react-modable';
+import { openModal, CLOSE_MODAL } from './modals';
 
 const TODO = 'TODO';
 
@@ -10,6 +10,6 @@ export const selectTodo = todo => dispatch => {
 
 export const DESELECT_TODO = `${TODO}/DESELECT`;
 export const deselectTodo = () => dispatch => {
-	dispatch(closeModal());
+	dispatch({ type: CLOSE_MODAL });
 	return dispatch({ type: DESELECT_TODO });
 };

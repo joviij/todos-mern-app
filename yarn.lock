@@ -4754,13 +4754,6 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-modable@^1.0.0-6:
-  version "1.0.0-6"
-  resolved "https://registry.yarnpkg.com/react-modable/-/react-modable-1.0.0-6.tgz#00f17c80a373085c4c813136f1c3070fc3c1fd3a"
-  integrity sha512-u5ozzCat6GQcuVC/2ZMvzj4f0AjFIIgdJW5fYEhaSqKwzURjCyF4UIz/uFIU6e3Nky2B461DA5YjTLhQqr5caA==
-  dependencies:
-    react "^16.5.2"
-
 react-redux@^5.0.7:
   version "5.0.7"
   resolved "http://registry.npmjs.org/react-redux/-/react-redux-5.0.7.tgz#0dc1076d9afb4670f993ffaef44b8f8c1155a4c8"

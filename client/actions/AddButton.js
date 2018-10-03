@@ -1,4 +1,4 @@
-import { openModal } from 'react-modable';
+import { openModal } from './modals';
 
 const ADD_BUTTON = 'ADD_BUTTON';
 
