@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './app.css';
 import TodoList from '../TodoList';
 import AddButton from '../../containers/AddButton';
+import { Todo } from '../lib/modals';
 
 class App extends React.Component {
 	constructor(props) {
@@ -21,6 +22,17 @@ class App extends React.Component {
     
 		this.getAllTodos = this.getAllTodos.bind(this);
 		this.selectTodo = this.selectTodo.bind(this);
+	}
+
+	get modal() {
+		const current = this.props.modal;
+		const modals = new Map([
+			['todo', <Todo key="todo"/>]
+		]);
+		if (current) {
+			return modals.get(current);
+		}
+		return null;
 	}
 
 	getAllTodos() {
@@ -52,6 +64,7 @@ class App extends React.Component {
 					onSelectTodo={this.selectTodo}
 				/>
 				<AddButton />
+				{ this.modal }
 			</div>
 		);
 	}

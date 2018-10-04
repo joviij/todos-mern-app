@@ -1,0 +1,21 @@
+.generic-modal {
+	background: #35353544;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	z-index: 10000;
+}
+
+.generic-modal .modal-body {
+	background: #ffffff;
+  min-width: 60%;
+	box-sizing: border-box;
+	padding: 0;
+	border-radius: 4px;
+	overflow: hidden;
+}

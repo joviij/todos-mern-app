@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Modal } from 'react-modable';
+import Modal from '../../../../containers/lib/modals/Modal';
 import Preview from '../../../../containers/lib/modals/Todo/Preview';
 import './todo-modal.css';
 
-const Todo = ({ onHide }) => (
-	<Modal modalStyle={{ borderRadius: '4px', padding: '0', overflow: 'hidden' }} className="todo-modal">
+const Todo = props => (
+	<Modal>
 		<Preview />
 		<div className="controls">
-			<button onClick={onHide}>Close</button>
+			<button onClick={props.onHide}>Close</button>
 		</div>
 	</Modal>
 );
