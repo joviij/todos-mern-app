@@ -3,7 +3,10 @@
   grid-template-columns: minmax(0, 25%) auto minmax(0, 25%);
   grid-template-rows: minmax(0, 15%) auto minmax(0, 15%);
   height: 100vh;
-  width: 100%;
+	width: 100%;
+	background: #22c1c3;
+  background: -webkit-linear-gradient(to left, #22c1c3, #fdbb2d);
+  background: linear-gradient(to left, #22c1c3, #fdbb2d);
 }
 
 @media (max-width: 600px) {

@@ -5,7 +5,14 @@ import './generic-modal.css';
 class Modal extends React.Component {
 	get actions() {
 		return this.props.actions && this.props.actions.map((action, index) => (
-			<button onClick={action.onClick} key={index}>{action.label}</button>
+			<button 
+				className={action.type} 
+				onClick={action.onClick} 
+				key={index}
+				type={action.type.submit ? 'submit' : undefined}
+			>
+				{action.label}
+			</button>
 		));
 	}
 
@@ -17,7 +24,7 @@ class Modal extends React.Component {
 					{ this.props.children }
 					<div className="controls">
 						{this.actions}
-						<button onClick={onHide}>Close</button>
+						<button onClick={onHide} className="danger">Close</button>
 					</div>
 				</div>
 			</div>
@@ -30,7 +37,8 @@ Modal.propTypes = {
 	onHide: PropTypes.func,
 	actions: PropTypes.arrayOf(PropTypes.shape({
 		label: PropTypes.any,
-		onClick: PropTypes.func
+		onClick: PropTypes.func,
+		type: PropTypes.string
 	}))
 };
 

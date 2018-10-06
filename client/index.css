@@ -5,11 +5,16 @@
   --violet: #5F5FDB;
   --blue: #48A3FF;
   --green: #18f583;
-  --yellow: #FFF648;
+  --yellow: #d6cd1e;
   --orange: #E88948;
   --red: #FF3936;
   --black: #111111;
-  --white: #ffffff;
+	--white: #ffffff;
+	/* Shadows */
+	--magenta-hard: #881b52;
+	--blue-hard: #3075bb;
+	--red-hard: #91201e;
+	--yellow-hard: #97911e;
 }
 
 body {
@@ -26,15 +31,44 @@ button {
   font-size: 0.9rem;
   border-radius: 4px;
   margin: 0.5rem;
-  background: var(--blue);
+	background: var(--blue);
+	outline-color: var(--blue);
   color: var(--white);
   border: none;
   cursor: pointer;
 }
 
-button:hover {
-  background: var(--red);
+button:hover, button:active {
+	background: var(--blue-hard);
   transition: 1s;
+}
+
+.secundary {
+	background: var(--magenta);
+}
+
+.secundary:hover, .secundary:active {
+	background: var(--magenta-hard);
+}
+
+.danger {
+	background: var(--red);
+	outline-color: var(--red);
+}
+
+.danger:hover, .danger:active {
+	background: var(--red-hard);
+	outline-color: var(--red-hard);
+}
+
+.warning {
+	background: var(--yellow);
+	outline-color: var(--yellow);
+}
+
+.warning:hover, .warning:active {
+	background: var(--yellow-hard);
+	outline-color: var(--yellow-hard);
 }
 
 .modal-body {

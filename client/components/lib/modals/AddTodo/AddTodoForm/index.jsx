@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import './add-todo-form.css';
 
-const onSubmit = data => console.log(data);
-
 const AddTodoForm = props => (
-	<form onSubmit={props.handleSubmit(onSubmit)} className="add-todo-form">
+	<form onSubmit={props.handleSubmit(props.onSubmit)} className="add-todo-form">
 		<Field
-			name="title" 
+			name="todo" 
 			component="input" 
 			type="text" 
 			placeholder="Wash the dishes"
@@ -19,12 +17,19 @@ const AddTodoForm = props => (
 			type="text"
 			placeholder="housekeeping"
 		/>
+		<Field
+			name="status"
+			component="input"
+			type="number"
+			placeholder="1"
+		/>
 		<button type="submit">Create</button>
 	</form>
 );
 
 AddTodoForm.propTypes = {
-	handleSubmit: PropTypes.func.isRequired
+	handleSubmit: PropTypes.func.isRequired,
+	onSubmit: PropTypes.func.isRequired
 };
 
 export default reduxForm({

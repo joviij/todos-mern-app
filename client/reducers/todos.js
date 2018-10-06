@@ -5,7 +5,9 @@ import {
 	ERROR,
 	REQUEST,
 	GET_ALL,
-	DELETE_TODO
+	UPDATE_TODO,
+	DELETE_TODO,
+	CREATE_TODO
 } from '../actions/Todo';
 
 const reducer = (state = {
@@ -15,10 +17,13 @@ const reducer = (state = {
 	loading: null
 }, action) => {
 	switch (action.type) {
-	case DELETE_TODO:
-		return { ...state, todos: state.todos.delete(action.id), loading: false, error: null };
 	case GET_ALL:
 		return { ...state, todos: Map(action.todos), loading: false, error: null };
+	case CREATE_TODO:
+	case UPDATE_TODO:
+		return { ...state, todos: state.todos.set(action.id, action.todo), loading: false, error: null };
+	case DELETE_TODO:
+		return { ...state, todos: state.todos.delete(action.id), loading: false, error: null };
 	case ERROR:
 		return { ...state, error: action.error, loading: false };
 	case REQUEST:
