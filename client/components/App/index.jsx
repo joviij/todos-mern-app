@@ -3,27 +3,9 @@ import PropTypes from 'prop-types';
 import './app.css';
 import TodoList from '../TodoList';
 import AddButton from '../../containers/AddButton';
-import { Todo } from '../lib/modals';
+import { Todo } from '../../containers/lib/modals/Todo';
 
 class App extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			todos: null,
-			error: null,
-			loading: false,
-			selected: null
-		};
-    
-		this.config = {
-			api: 'http://localhost:5000'
-		};
-    
-		this.getAllTodos = this.getAllTodos.bind(this);
-		this.selectTodo = this.selectTodo.bind(this);
-	}
-
 	get modal() {
 		const current = this.props.modal;
 		const modals = new Map([
@@ -35,26 +17,12 @@ class App extends React.Component {
 		return null;
 	}
 
-	getAllTodos() {
-		fetch(`${this.config.api}/api/todos`)
-			.then(res => res.json())
-			.then(json => this.setState({ todos: json }))
-			.catch(error => this.setState({ error }));
-	}
-  
-	selectTodo(todo) {
-		this.setState({
-			selected: todo
-		});
-	}
-  
 	componentDidMount() {
-		this.getAllTodos();
+		this.props.onMount();
 	}
 
 	render() {
-		const { todos } = this.state;
-		const { modal } = this.props;
+		const { modal, todos } = this.props;
 		return (
 			<div className="app">
 				<TodoList 
@@ -71,8 +39,10 @@ class App extends React.Component {
 }
 
 App.propTypes = {
+	todos: PropTypes.array,
 	modal: PropTypes.string,
-	onCloseModal: PropTypes.func
+	onCloseModal: PropTypes.func,
+	onMount: PropTypes.func.isRequired
 };
 
 export default App;

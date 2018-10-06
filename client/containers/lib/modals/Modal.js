@@ -1,10 +1,10 @@
 import Modal from '../../../components/lib/modals/Modal';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { CLOSE_MODAL } from '../../../actions/modals';
+import { closeModal as onHide } from '../../../actions/modals';
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-	onHide: CLOSE_MODAL
+	onHide
 }, dispatch);
 
 export default connect(null, mapDispatchToProps)(Modal);

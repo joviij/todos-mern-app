@@ -32,7 +32,7 @@ class Preview extends React.Component {
 		return (
 			<React.Fragment>
 				<Header todo={todo} />
-				<div className="modal-body">
+				<div className="todo-data">
 					<ul className="preview-todo">
 						<li>
 							<span>Status:&nbsp;</span>{statuses[todo.status]}

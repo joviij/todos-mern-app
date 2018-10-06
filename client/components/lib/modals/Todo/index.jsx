@@ -4,12 +4,13 @@ import Modal from '../../../../containers/lib/modals/Modal';
 import Preview from '../../../../containers/lib/modals/Todo/Preview';
 import './todo-modal.css';
 
+function consoleMe() {
+	console.log('Me');
+}
+
 const Todo = props => (
-	<Modal>
+	<Modal actions={[{ label: 'Me', onClick: consoleMe }]}>
 		<Preview />
-		<div className="controls">
-			<button onClick={props.onHide}>Close</button>
-		</div>
 	</Modal>
 );
 
