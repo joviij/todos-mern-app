@@ -6,7 +6,6 @@ import Todo from '../../containers/Todo';
 class TodoList extends React.Component {
 	get todos() {
 		const { todos } = this.props;
-		console.log(todos);
 		return todos ? todos.map(todo => (
 			<Todo 
 				key={todo._id} 

@@ -1,44 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './todo-header.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
-import { Field, reduxForm } from 'redux-form';
+import { Field } from 'redux-form';
 
 class Header extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			showEdition: false,
-			editing: false
-		};
-
-		this.toggleEditionPencil = this.toggleEditionPencil.bind(this);
-		this.toggleInput = this.toggleInput.bind(this);
-	}
-
-	toggleEditionPencil() {
-		this.setState({
-			showEdition: !this.state.showEdition
-		});
-	}
-  
-	toggleInput() {
-		this.setState({
-			editing: !this.state.editing
-		});
-	}
-
 	render() {
-		const { todo } = this.props;
+		const { todo, editing } = this.props;
 		return (
-			<h3 
-				className="todo-header"
-				onMouseEnter={this.toggleEditionPencil} 
-				onMouseLeave={this.toggleEditionPencil}
-			>
+			<h3 className="todo-header">
 				{
-					this.state.editing
+					editing
 						? <Field
 							type="text"
 							name="todoName"
@@ -46,24 +17,15 @@ class Header extends React.Component {
 						/>
 						: todo.todo
 				}
-				{ 
-					this.state.showEdition || this.state.editing
-						? <FontAwesomeIcon
-							icon={faPen} 
-							onClick={this.toggleInput} 
-							style={{ cursor: 'pointer' }} 
-						/> 
-						: null 
-				}
 			</h3>
 		);
 	}
 }
 
 Header.propTypes = {
-	todo: PropTypes.object.isRequired
+	todo: PropTypes.object.isRequired,
+	editing: PropTypes.bool.isRequired,
+	onEdit: PropTypes.func.isRequired
 };
 
-export default reduxForm({
-	form: 'todo-title'
-})(Header);
+export default Header;

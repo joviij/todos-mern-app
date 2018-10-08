@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './preview-todo.css';
 import Label from '../../../../Todo/Label';
-import Header from '../../../../../containers/lib/modals/Todo/Header';
+import Header from './Header';
+import { Field } from 'redux-form';
 
 const statuses = {
 	'1': 'To Do',
@@ -10,7 +11,7 @@ const statuses = {
 	'3': 'Done'
 };
 
-class Preview extends React.Component {  
+class Preview extends React.Component {
 	get formatDate() {
 		const date = new Date(this.props.todo.created);
 		return [date.getDate(), (date.getMonth() + 1), date.getFullYear()].join('/');
@@ -23,7 +24,48 @@ class Preview extends React.Component {
 		if (days > 1) {
 			return `${days} days ago`;
 		} else {
-			return 'a day ago';  
+			return 'today';  
+		}
+	}
+
+	get next() {
+		const { props } = this;
+		if (props.editing) {
+			return (
+				<ul className="preview-todo">
+					<li>
+						<span>Status:&nbsp;</span>
+						{/* This should be a select input */}
+						<Field 
+							type="number"
+							component="input"
+							name="status"
+						/>
+					</li>
+					<li>
+						<Label label={props.todo.label} editing />
+					</li>
+					<li className="date-time">
+						<span>Created:&nbsp; {this.formatDate}</span>
+						<span className="days">{this.daysDifference}</span>
+					</li>
+				</ul>
+			);
+		} else {
+			return (
+				<ul className="preview-todo">
+					<li>
+						<span>Status:&nbsp;</span>{statuses[props.todo.status]}
+					</li>
+					<li>
+						<Label label={props.todo.label} />
+					</li>
+					<li className="date-time">
+						<span>Created:&nbsp; {this.formatDate}</span>
+						<span className="days">{this.daysDifference}</span>
+					</li>
+				</ul>
+			);
 		}
 	}
 
@@ -31,20 +73,13 @@ class Preview extends React.Component {
 		const { todo } = this.props;
 		return (
 			<React.Fragment>
-				<Header todo={todo} />
+				<Header 
+					todo={todo} 
+					editing={this.props.editing} 
+					onEdit={this.toggleEditing} 
+				/>
 				<div className="todo-data">
-					<ul className="preview-todo">
-						<li>
-							<span>Status:&nbsp;</span>{statuses[todo.status]}
-						</li>
-						<li className="date-time">
-							<span>Created:&nbsp; {this.formatDate}</span>
-							<span className="days">{this.daysDifference}</span>
-						</li>
-						<li>
-							<Label label={todo.label} />
-						</li>
-					</ul>
+					{ this.next }
 				</div>
 			</React.Fragment>
 		);
@@ -52,7 +87,8 @@ class Preview extends React.Component {
 }
 
 Preview.propTypes = {
-	todo: PropTypes.object.isRequired
+	todo: PropTypes.object.isRequired,
+	editing: PropTypes.bool.isRequired
 };
 
 export default Preview;

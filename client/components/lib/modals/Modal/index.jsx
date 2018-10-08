@@ -4,16 +4,22 @@ import './generic-modal.css';
 
 class Modal extends React.Component {
 	get actions() {
-		return this.props.actions && this.props.actions.map((action, index) => (
-			<button 
-				className={action.type} 
-				onClick={action.onClick} 
-				key={index}
-				type={action.type.submit ? 'submit' : undefined}
-			>
-				{action.label}
-			</button>
-		));
+		return this.props.actions && this.props.actions.map((action, index) => {
+			if (action.hide) {
+				return null;
+			} else {
+				return (
+					<button
+						className={action.type} 
+						onClick={action.onClick} 
+						key={index}
+						type={action.type === 'submit' ? 'submit' : 'button'}
+					>
+						{action.label}
+					</button>
+				);
+			}
+		});
 	}
 
 	render() {
@@ -39,7 +45,8 @@ Modal.propTypes = {
 		label: PropTypes.any,
 		onClick: PropTypes.func,
 		type: PropTypes.string
-	}))
+	})),
+	hide: PropTypes.bool
 };
 
 export default Modal;
