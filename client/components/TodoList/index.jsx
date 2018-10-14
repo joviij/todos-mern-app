@@ -27,8 +27,8 @@ class TodoList extends React.Component {
 }
 
 TodoList.propTypes = {
-	todos: PropTypes.array,
-	onSelectTodo: PropTypes.func.isRequired
+	todos: PropTypes.object,
+	onSelectTodo: PropTypes.func
 };
 
 export default TodoList;

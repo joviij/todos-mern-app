@@ -1,37 +1,29 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Field, reduxForm } from 'redux-form';
+import { Field } from 'redux-form';
 import './add-todo-form.css';
+import Alphanumeric from '../../../Alphanumeric';
 
 const AddTodoForm = props => (
-	<form onSubmit={props.handleSubmit(props.onSubmit)} className="add-todo-form">
+	<React.Fragment>
 		<Field
 			name="todo" 
-			component="input" 
+			component={Alphanumeric} 
 			type="text" 
-			placeholder="Wash the dishes"
+			placeholder="What do you have to do?"
 		/>
 		<Field
 			name="label"
-			component="input"
+			component={Alphanumeric}
 			type="text"
-			placeholder="housekeeping"
+			placeholder="school/work"
 		/>
 		<Field
 			name="status"
-			component="input"
+			component={Alphanumeric}
 			type="number"
-			placeholder="1"
+			placeholder="1, 2 or 3"
 		/>
-		<button type="submit">Create</button>
-	</form>
+	</React.Fragment>
 );
 
-AddTodoForm.propTypes = {
-	handleSubmit: PropTypes.func.isRequired,
-	onSubmit: PropTypes.func.isRequired
-};
-
-export default reduxForm({
-	form: 'add-todo'
-})(AddTodoForm);
+export default AddTodoForm;

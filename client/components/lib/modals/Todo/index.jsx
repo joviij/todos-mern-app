@@ -45,7 +45,8 @@ class Todo extends React.Component {
 	}
 
 	handleSubmit(data) {
-		console.log(data);
+		const id = this.props.todo._id;
+		this.props.onUpdate(id, data);
 	}
 
 	toggleEditing() {
@@ -74,7 +75,8 @@ Todo.propTypes = {
 	todo: PropTypes.object,
 	initialValues: PropTypes.object.isRequired,
 	onHide: PropTypes.func,
-	onDelete: PropTypes.func.isRequired
+	onDelete: PropTypes.func.isRequired,
+	onUpdate: PropTypes.func.isRequired
 };
 
 export default reduxForm({

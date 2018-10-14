@@ -24,7 +24,10 @@ export const createTodo = todo => dispatch => {
 			'Content-Type': 'application/json'
 		}
 	}).then(res => res.json())
-		.then(json => dispatch({ type: CREATE_TODO, id: json._id, todo: json }))
+		.then(json => {
+			dispatch({ type: CREATE_TODO, id: json._id, todo: json });
+			return dispatch({ type: CLOSE_MODAL });
+		})
 		.catch(error => dispatch({ type: ERROR, error }));
 };
 
@@ -45,7 +48,7 @@ export const updateTodo = (id, todo) => dispatch => {
 	dispatch({ type: REQUEST });
 	return fetch(`${config.api}/api/todos/${id}`, {
 		method: 'PUT',
-		body: todo
+		body: JSON.stringify(todo)
 	}).then(res => res.json())
 		.then(json => dispatch({ type: UPDATE_TODO, id, todo: json }))
 		.catch(error => dispatch({ type: ERROR, error }));
@@ -56,7 +59,10 @@ export const deleteTodo = id => dispatch => {
 	dispatch({ type: REQUEST });
 	return fetch(`${config.api}/api/todos/${id}`, {
 		method: 'DELETE'
-	}).then(() => dispatch({ type: DELETE_TODO, id }))
+	}).then(() => {
+		dispatch({ type: DELETE_TODO, id });
+		return dispatch({ type: CLOSE_MODAL });
+	})
 		.catch(error => dispatch({ type: ERROR, error }));
 };
 
@@ -70,4 +76,8 @@ export const DESELECT_TODO = `${TODO}/DESELECT`;
 export const deselectTodo = () => dispatch => {
 	dispatch({ type: CLOSE_MODAL });
 	return dispatch({ type: DESELECT_TODO });
+};
+
+export const promptDelete = () => dispatch => {
+	dispatch(openModal('delete-todo'));
 };

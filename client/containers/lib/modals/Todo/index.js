@@ -1,7 +1,7 @@
 import TodoModal from '../../../../components/lib/modals/Todo';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { deleteTodo as onDelete } from '../../../../actions/Todo';
+import { promptDelete as onDelete, updateTodo as onUpdate } from '../../../../actions/Todo';
 
 const mapStateToProps = state => ({
 	todo: state.todos.selected,
@@ -13,7 +13,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-	onDelete
+	onDelete,
+	onUpdate
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoModal);

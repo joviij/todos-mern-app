@@ -1,7 +1,9 @@
 const Todo = require('../../models').Todo;
+const log = require('../../helpers').log;
 
 module.exports = (req, res) => {
 	let next = req.body;
+	log(req, res, 'UPDATE TODO');
 	if (next) {
 		Todo.findById(next._id, (err, todo) => {
 			todo.todo = next.todo;

@@ -4,14 +4,16 @@ import './app.css';
 import TodoList from '../TodoList';
 import AddButton from '../../containers/AddButton';
 import Todo from '../../containers/lib/modals/Todo';
-import { AddTodo } from '../../components/lib/modals';
+import DeleteTodo from '../../containers/lib/modals/DeleteTodo';
+import AddTodo from '../../containers/lib/modals/AddTodo';
 
 class App extends React.Component {
 	get modal() {
 		const current = this.props.modal;
 		const modals = new Map([
 			['todo', <Todo key="todo"/>],
-			['add-todo', <AddTodo key="add-todo" />]
+			['add-todo', <AddTodo key="add-todo" />],
+			['delete-todo', <DeleteTodo key="delete-todo" />]
 		]);
 		if (current) {
 			return modals.get(current);
@@ -48,7 +50,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-	todos: PropTypes.array,
+	todos: PropTypes.object,
 	modal: PropTypes.string,
 	onCloseModal: PropTypes.func,
 	onMount: PropTypes.func.isRequired

@@ -9,6 +9,7 @@ import {
 	DELETE_TODO,
 	CREATE_TODO
 } from '../actions/Todo';
+import { CLOSE_MODAL } from '../actions/modals';
 
 const reducer = (state = {
 	todos: null,
@@ -30,6 +31,7 @@ const reducer = (state = {
 		return { ...state, loading: true, error: null };
 	case SELECT_TODO:
 		return { ...state, selected: action.todo, error: null, loading: false };
+	case CLOSE_MODAL:
 	case DESELECT_TODO:
 		return { ...state, selected: null, error: null, loading: false };
 	default:

@@ -75,3 +75,16 @@ button:hover, button:active {
   padding: 0.5rem;
   box-sizing: border-box;
 }
+
+input[type="text"],
+input[type="number"] {
+  background: transparent;
+	font-size: inherit;
+	box-sizing: border-box;
+  border: none;
+  color: var(--black);
+  box-sizing: border-box;
+  outline: none;
+  border-bottom: 1px solid var(--black);
+	width: auto;
+}
