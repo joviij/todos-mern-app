@@ -6,7 +6,7 @@ import { promptDelete as onDelete, updateTodo as onUpdate } from '../../../../ac
 const mapStateToProps = state => ({
 	todo: state.todos.selected,
 	initialValues: {
-		todoName: state.todos.selected.todo,
+		todo: state.todos.selected.todo,
 		label: state.todos.selected.label,
 		status: state.todos.selected.status
 	}

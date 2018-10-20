@@ -46,7 +46,8 @@ class Todo extends React.Component {
 
 	handleSubmit(data) {
 		const id = this.props.todo._id;
-		this.props.onUpdate(id, data);
+		let newTodo = Object.assign(this.props.todo, data); // merge oldtodo and data
+		this.props.onUpdate(id, newTodo);
 	}
 
 	toggleEditing() {

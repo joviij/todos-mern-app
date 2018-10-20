@@ -49,7 +49,10 @@ export const updateTodo = (id, todo) => dispatch => {
 	dispatch({ type: REQUEST });
 	return fetch(`${config.api}/api/todos/${id}`, {
 		method: 'PUT',
-		body: JSON.stringify(todo)
+		body: JSON.stringify(todo),
+		headers: {
+			'Content-Type': 'application/json'
+		}
 	}).then(res => res.json())
 		.then(json => dispatch({ type: UPDATE_TODO, id, todo: json }))
 		.catch(error => dispatch({ type: ERROR, error }));

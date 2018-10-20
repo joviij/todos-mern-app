@@ -12,7 +12,7 @@ class Header extends React.Component {
 					editing
 						? <Field
 							type="text"
-							name="todoName"
+							name="todo"
 							component="input"
 						/>
 						: todo.todo
