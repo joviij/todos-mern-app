@@ -60,6 +60,12 @@ POST | `/api/todos/` | Add todo | `Todo` | `Todo`
 PUT | `/api/todos/{id:String}` | Update a todo | `Todo` | `Todo`
 DELETE | `/api/todos/{id:String}` | Remove a todo | None | None
 
+### Visual Studio Code Workspace
+If you are using Visual Studio Code as your favorite text editor, I recommend 
+you to open the project using the defined workspace.
+To accomplish that you'll want to go to `File/Open Workspace` and select
+`todos-mern-app.code-workspace`.
+
 ## Contributions
 
 Contributions to this project are welcome, feel free to improve the project,

@@ -3,18 +3,11 @@ import PropTypes from 'prop-types';
 import './app.css';
 import TodoList from '../TodoList';
 import AddButton from '../../containers/AddButton';
-import Todo from '../../containers/lib/modals/Todo';
-import DeleteTodo from '../../containers/lib/modals/DeleteTodo';
-import AddTodo from '../../containers/lib/modals/AddTodo';
+import modals from './modals';
 
 class App extends React.Component {
 	get modal() {
 		const current = this.props.modal;
-		const modals = new Map([
-			['todo', <Todo key="todo"/>],
-			['add-todo', <AddTodo key="add-todo" />],
-			['delete-todo', <DeleteTodo key="delete-todo" />]
-		]);
 		if (current) {
 			return modals.get(current);
 		}

@@ -1,5 +1,6 @@
 import { normalize, schema } from 'normalizr';
 import { openModal, CLOSE_MODAL } from './modals';
+import { constants as modal } from '../components/App/modals';
 
 const TODO = 'TODO';
 
@@ -68,7 +69,7 @@ export const deleteTodo = id => dispatch => {
 
 export const SELECT_TODO = `${TODO}/SELECT`;
 export const selectTodo = todo => dispatch => {
-	dispatch(openModal('todo'));
+	dispatch(openModal(modal.todo));
 	return dispatch({ type: SELECT_TODO, todo });
 };
 
@@ -79,5 +80,5 @@ export const deselectTodo = () => dispatch => {
 };
 
 export const promptDelete = () => dispatch => {
-	dispatch(openModal('delete-todo'));
+	dispatch(openModal(modal.deleteTodo));
 };
